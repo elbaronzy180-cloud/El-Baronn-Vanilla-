@@ -1,0 +1,267 @@
+/* ─────────────────────────────────────────
+   style.css  |  El Baronn – Vanilla
+   ───────────────────────────────────────── */
+
+/* ── RESET & ROOT ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --cream:  #f5efe6;
+  --warm:   #e8d5b7;
+  --brown:  #7c5c3a;
+  --dark:   #1a1209;
+  --gold:   #c9942a;
+  --text:   #2e1f0e;
+
+  --card-bg:     rgba(255, 255, 255, 0.04);
+  --card-border: rgba(201, 148, 42, 0.2);
+  --radius:      16px;
+}
+
+/* ── BASE ── */
+body {
+  background-color: var(--dark);
+  color: var(--cream);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+  min-height: 100vh;
+  background-image:
+    radial-gradient(ellipse at 20% 0%,   rgba(201,148,42,0.15) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 100%, rgba(124,92,58,0.20)  0%, transparent 60%);
+}
+
+/* ── HERO ── */
+.hero {
+  text-align: center;
+  padding: 80px 20px 60px;
+  position: relative;
+  animation: fadeDown 0.9s ease both;
+}
+
+.hero::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 2px;
+  background: var(--gold);
+  margin: 40px auto 0;
+}
+
+.artist-label {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 16px;
+}
+
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(52px, 10vw, 96px);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -2px;
+  color: var(--cream);
+}
+
+h2 {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: clamp(28px, 5vw, 48px);
+  font-weight: 400;
+  color: var(--warm);
+  margin-top: 8px;
+}
+
+.producer-tag {
+  font-size: 12px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--brown);
+  margin-top: 20px;
+}
+
+/* ── CONTAINER ── */
+.container {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 24px 80px;
+}
+
+/* ── SHARED CARD ── */
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  padding: 36px;
+  margin-bottom: 28px;
+  animation: fadeUp 0.7s ease both;
+}
+
+.card-label {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 20px;
+}
+
+/* ── AUDIO ── */
+audio {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 24px;
+  accent-color: var(--gold);
+}
+
+/* ── BUTTONS ── */
+.btn-row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 28px;
+  border-radius: 6px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease,
+              color 0.2s ease, transform 0.15s ease;
+}
+
+.btn-primary {
+  background: var(--gold);
+  color: var(--dark);
+  border: none;
+}
+
+.btn-primary:hover {
+  background: #d9a83a;
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--cream);
+  border: 1px solid rgba(245, 239, 230, 0.3);
+}
+
+.btn-outline:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+  transform: translateY(-2px);
+}
+
+/* ── VIDEO ── */
+video {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 10px;
+  display: block;
+}
+
+/* ── PLATFORMS GRID ── */
+.platforms-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 12px;
+  list-style: none;
+}
+
+.platforms-grid li a {
+  display: block;
+  padding: 14px 18px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  color: var(--cream);
+  text-decoration: none;
+  font-size: 13px;
+  text-align: center;
+  transition: background 0.2s ease, border-color 0.2s ease,
+              color 0.2s ease, transform 0.15s ease;
+}
+
+.platforms-grid li a:hover {
+  background: rgba(201, 148, 42, 0.15);
+  border-color: var(--gold);
+  color: var(--gold);
+  transform: translateY(-2px);
+}
+
+/* ── DESCRIPTION ── */
+.desc-card p {
+  line-height: 1.8;
+  color: var(--warm);
+  font-size: 15px;
+}
+
+.desc-card strong {
+  color: var(--cream);
+  font-weight: 500;
+}
+
+/* ── LYRICS ── */
+.section-label {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+  opacity: 0.75;
+  margin: 32px 0 12px;
+}
+
+.section-label:first-of-type {
+  margin-top: 0;
+}
+
+.lyric-block {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 16px;
+  line-height: 2;
+  color: var(--warm);
+}
+
+/* ── FOOTER ── */
+footer {
+  text-align: center;
+  padding: 40px 20px;
+  border-top: 1px solid rgba(201, 148, 42, 0.15);
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: var(--brown);
+  text-transform: uppercase;
+}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 600px) {
+  .card { padding: 24px; }
+  .platforms-grid { grid-template-columns: 1fr 1fr; }
+  .btn-row { flex-direction: column; }
+  .btn { text-align: center; }
+}
