@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vanilla — El Baronn</title>
+  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Lora:ital,wght@0,400;1,400&family=Great+Vibes&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="lyrics.css">
+</head>
+<body>
+
+  <canvas id="bg-canvas"></canvas>
+  <div id="bg-blur"></div>
+
+  <div id="splash">
+    <div id="splash-hearts"></div>
+    <h2>Vanilla</h2>
+    <p>— El Baronn —</p>
+    <button id="start-btn">&#9829;&nbsp; Play</button>
+  </div>
+
+  <div id="header">
+    <div class="tb">
+      <h1>Vanilla</h1>
+      <div class="hl"></div>
+      <p>El Baronn</p>
+    </div>
+    <button id="dl-btn">&#11015;&nbsp; Download</button>
+  </div>
+
+  <div id="stage">
+    <div id="lyric-box"></div>
+  </div>
+
+  <div id="viz"></div>
+
+  <div id="player">
+    <div id="prog-track">
+      <div id="prog-fill"></div>
+    </div>
+    <div id="ctrl">
+      <span class="tt" id="ct">0:00</span>
+      <button id="play-btn">&#9654;</button>
+      <div class="right-ctrl">
+        <span class="tt" id="dt">0:00</span>
+        <div class="vr">
+          <span>&#128266;</span>
+          <input type="range" id="vol" min="0" max="1" step="0.01" value="0.85">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Change vanilla.mp3 to your audio file name -->
+  <audio id="aud" preload="auto">
+    <source src="Vanilla - El Baronn.mp3" type="audio/mpeg">
+  </audio>
+
+  <script src="lyrics.js"></script>
+</body>
+</html>
